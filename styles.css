@@ -1,3 +1,149 @@
-body {
-    background-color: pink;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900");
+
+/* ===== Modern CSS Reset ===== */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Remove built-in form typography */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* ===== OWN STYLING ===== */
+:root {
+  --font-primary: "Poppins", system-ui, sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  --font-size-h1: 2rem;
+  --font-size-h2: 1.4rem;
+  --font-size-body: 1rem;
+
+  --accent-color-1: rgb(90, 42, 202);
+  --background-color-light: rgb(217, 217, 238);
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  background-color: var(--background-color-light);
+}
+
+/* header styling */
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.add-note-btn,
+.toggle-theme-btn {
+  font-weight: var(--font-weight-medium);
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.add-note-btn {
+  color: white;
+  background-color: var(--accent-color-1);
+}
+
+/* note dialog styling */
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+}
+button {
+  cursor: pointer;
+}
+
+dialog {
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+form {
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
