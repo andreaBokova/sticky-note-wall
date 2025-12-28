@@ -105,6 +105,11 @@ header {
   background-color: var(--accent-color-1);
 }
 
+.add-note-btn:hover, .toggle-theme-btn:hover {
+    background-color: black;
+    transition: 0.3s;
+}
+
 /* note dialog styling */
 h2 {
   font-size: var(--font-size-h2);
@@ -112,6 +117,10 @@ h2 {
 }
 button {
   cursor: pointer;
+}
+
+.note-dialog {
+  margin: auto;
 }
 
 dialog {
@@ -147,3 +156,16 @@ textarea {
   resize: none;
 }
 
+.cancel-btn,
+.save-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.cancel-btn:hover,
+.save-btn:hover {
+  background-color: var(--accent-color-1);
+  transition: 0.3s;
+  color: white;
+}
