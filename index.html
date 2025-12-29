@@ -4,36 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sticky Note Wall</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
   </head>
   <body>
     <header>
       <h1 class="poppins-bold">Sticky Note Wall</h1>
       <div class="header-buttons">
-      <button type="button" class="add-note-btn" onclick="openNoteDialog()">
-        Add Note
-      </button>
-      <button type="button" class="toggle-theme-btn" onclick="toggleTheme()">
-        🌗
-      </button>
-    </div>
+        <button type="button" class="add-note-btn" onclick="openNoteDialog()">
+          Add Note
+        </button>
+        <button type="button" class="toggle-theme-btn" onclick="toggleTheme()">
+          🌗
+        </button>
+      </div>
     </header>
     <main>
       <div class="notes-grid" id="notesContainer"></div>
     </main>
-    <dialog class="note-dialog" id="noteDialog" open>
-        <h2>Add note</h2>
+    <dialog class="note-dialog" id="noteDialog">
+      <h2>Add note</h2>
       <form id="noteForm">
         <div class="form-group">
           <label for="noteTitle">Title</label>
-          <input type="text" id="noteTitle" required/>
+          <input type="text" id="noteTitle" required />
         </div>
         <div class="form-group">
           <label for="noteText">Text</label>
           <textarea id="noteText" required></textarea>
         </div>
         <div class="dialog-actions">
-          <button type="button" class="cancel-btn" onclick="closeNoteDialog()">Cancel</button>
+          <button type="button" class="cancel-btn" onclick="closeNoteDialog()">
+            Cancel
+          </button>
           <button type="submit" class="save-btn">Save</button>
         </div>
       </form>
