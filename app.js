@@ -1,4 +1,4 @@
-let notes = [];
+let notes = JSON.parse(localStorage.getItem("quickNotes")) || [];
 
 function openNoteDialog() {
   const dialog = document.getElementById("noteDialog");
@@ -32,7 +32,7 @@ function saveNote(event) {
   const text = textInput.value.trim();
 
   notes.unshift({
-    id: generateId,
+    id: generateId(),
     title: title,
     text: text,
   });
@@ -72,9 +72,9 @@ function saveNotes() {
 }
 
 function loadNotes() {
-  const savedNotes = localStorage.getItem("quickNotes");
-  return saveNotes ? JSON.parse(savedNotes) : [];
-}
+    const savedNotes = localStorage.getItem("quickNotes");
+    return savedNotes ? JSON.parse(savedNotes) : [];
+  }
 
 document.addEventListener("DOMContentLoaded", function () {
   notes = loadNotes();
