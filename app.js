@@ -26,6 +26,25 @@ function openNoteDialog(noteId = null) {
   titleInput.focus();
 }
 
+function toggleTheme() {
+  const darkTheme = document.body.classList.toggle("dark-theme");
+  localStorage.setItem("darkTheme", darkTheme);
+  document.getElementById("toggleThemeBtn").textContent = darkTheme
+    ? "💡"
+    : "🌙";
+}
+
+function applyStoredTheme() {
+  const darkTheme = localStorage.getItem("darkTheme") === "true";
+  document.getElementById("toggleThemeBtn").textContent = darkTheme
+    ? "💡"
+    : "🌙";
+  if (darkTheme) {
+    document.body.classList.add("dark-theme");
+  } else {
+    document.body.classList.remove("dark-theme");
+  }
+}
 function closeNoteDialog() {
   const dialog = document.getElementById("noteDialog");
 
@@ -125,6 +144,7 @@ function getRandomNoteColor() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  applyStoredTheme()
   notes = loadNotes();
   renderNotes();
 

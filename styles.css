@@ -63,23 +63,32 @@ h6 {
   --font-size-h2: 1.4rem;
   --font-size-body: 1rem;
 
-  --accent-color-1: rgb(127, 83, 196);
-  --background-color-light: rgb(193, 206, 231);
+  --accent-color-1: rgb(35, 184, 181);
+  --background-color: rgb(193, 206, 231);
+  --button-text-color: rgba(255, 255, 255, 0.851);
+  --button-hover-color: rgb(35, 35, 35);
+  --h1-color: rgba(0, 0, 0, 0.995);
 
   --element-border-radius: 5px;
+}
+
+.dark-theme {
+  --background-color: rgb(30, 39, 61);
+  --h1-color: rgba(254, 251, 251, 0.995);
 }
 
 body {
   font-family: var(--font-primary);
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-regular);
-  background-color: var(--background-color-light);
+  background-color: var(--background-color);
 }
 
 /* header styling */
 h1 {
   font-size: var(--font-size-h1);
   font-weight: var(--font-weight-bold);
+  color: var(--h1-color);
 }
 
 header {
@@ -103,13 +112,13 @@ header {
 }
 
 .add-note-btn {
-  color: white;
+  color: var(--button-text-color);
   background-color: var(--accent-color-1);
 }
 
 .add-note-btn:hover,
 .toggle-theme-btn:hover {
-  background-color: black;
+  background-color: var(--button-hover-color);
   transition: 0.3s;
 }
 
@@ -176,7 +185,7 @@ textarea:focus {
 .save-btn:hover {
   background-color: var(--accent-color-1);
   transition: 0.3s;
-  color: white;
+  color: var(--button-text-color);
 }
 
 /* styling sticky notes */
@@ -212,7 +221,7 @@ textarea:focus {
   border: none;
   padding: 5px;
   border-radius: var(--element-border-radius);
-  color: white;
+  color: var(--button-text-color);
 }
 
 .edit-btn:hover,
