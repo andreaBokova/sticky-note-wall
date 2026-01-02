@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-      <h1 class="poppins-bold">Sticky Note Wall</h1>
+      <h1 class="poppins-bold">📌Sticky Note Wall</h1>
       <div class="header-buttons">
         <button type="button" class="add-note-btn" onclick="openNoteDialog()">
           Add Note
@@ -23,21 +23,21 @@
       <div class="notes-grid" id="notesContainer"></div>
     </main>
     <dialog class="note-dialog" id="noteDialog">
-      <h2>Add note</h2>
-      <form id="noteForm">
+      <h2 id="dialogTitle">Add note</h2>
+      <form id="noteForm" novalidate>
         <div class="form-group">
           <label for="noteTitle">Title</label>
-          <input type="text" id="noteTitle" required />
+          <input type="text" id="noteTitle" name="noteTitle" required />
         </div>
         <div class="form-group">
           <label for="noteText">Text</label>
-          <textarea id="noteText" required></textarea>
+          <textarea id="noteText" name="noteText" required></textarea>
         </div>
         <div class="dialog-actions">
           <button type="button" class="cancel-btn" onclick="closeNoteDialog()">
             Cancel
           </button>
-          <button type="submit" class="save-btn">Save</button>
+          <button type="submit" class="save-btn" type="submit">Save</button>
         </div>
       </form>
     </dialog>
